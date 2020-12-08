@@ -4,10 +4,17 @@ function pageLoaded() {
 
 	let rootDiv = document.getElementById("root");
 
-	rootDiv.insertAdjacentHTML('afterbegin', '<h1>Create Your Character</h1>');
+	
+
+	/*a formot és a charactersheetet befoglaló konténer*/
+
+	rootDiv.insertAdjacentHTML('afterbegin', '<div class="formAndSheetContainer"></div>');
+	let formAndSheetContainer = document.querySelector(".formAndSheetContainer");
+	formAndSheetContainer.insertAdjacentHTML('beforebegin', '<h1>Create Your Character</h1>');
+
 
 	/*A formot befoglaló container létrehozása */	
-		rootDiv.insertAdjacentHTML('beforeend', '<div class="formContainer"></div');
+	formAndSheetContainer.insertAdjacentHTML('afterbegin', '<div class="formContainer"></div');
 		let formContainer = document.querySelector(".formContainer");
 	
 
@@ -69,31 +76,38 @@ function pageLoaded() {
 		characterSheetContainer.insertAdjacentHTML('afterbegin', '<div class="characterNameContainer"></div>');
 		let characterNameContainer = document.querySelector(".characterNameContainer");
 		characterNameContainer.insertAdjacentHTML('beforebegin', '<h3 id="playerData">Player data</h3>');
-		characterNameContainer.insertAdjacentHTML('afterbegin', '<p id="characterName"></p>');
+		characterNameContainer.insertAdjacentHTML('afterbegin', '<p>Name: </p><p id="characterName"></p>');
 		let characterName = document.querySelector("#characterName");
 
 	/*character gender blokk létrehozása */
 		characterSheetContainer.insertAdjacentHTML('beforeend', '<div class="characterGenderContainer"></div>');
 		let characterGenderContainer = document.querySelector(".characterGenderContainer");
-		characterGenderContainer.insertAdjacentHTML('afterbegin', '<p id="characterGender"></p>');
+		characterGenderContainer.insertAdjacentHTML('afterbegin', '<p>Gender: </p><p id="characterGender"></p>');
 		characterGenderContainer.insertAdjacentHTML('beforeend', '<div class="characterImageContainer"></div>');
 		let characterGender = document.querySelector("#characterGender");
+		let characterImageContainer = document.querySelector(".characterImageContainer");
+		characterImageContainer.insertAdjacentHTML('afterbegin', '<img src="/img/iconmonstrgender8.svg" alt="maleIcon">');
+		characterImageContainer.insertAdjacentHTML('afterbegin', '<img src="/img/iconmonstrgender10.svg" alt="femaleIcon">');
 
 	/*character race blokk létrehozása */
 		characterSheetContainer.insertAdjacentHTML('beforeend', '<div class="characterRaceContainer"></div>');
 		let characterRaceContainer = document.querySelector(".characterRaceContainer");
-		characterRaceContainer.insertAdjacentHTML('afterbegin', '<p id="characterRace"></p>');
+		characterRaceContainer.insertAdjacentHTML('afterbegin', '<p>Race: </p><p id="characterRace"></p>');
 		characterRaceContainer.insertAdjacentHTML('beforeend', '<div class="characterImageContainer"></div>');
 		let characterRace = document.querySelector("#characterRace");
 
 	/*character class blokk létrehozása */
 		characterSheetContainer.insertAdjacentHTML('beforeend', '<div class="characterClassContainer"></div>');
 		let characterClassContainer = document.querySelector(".characterClassContainer");
-		characterClassContainer.insertAdjacentHTML('afterbegin', '<p id="characterClass"></p>');
+		characterClassContainer.insertAdjacentHTML('afterbegin', '<p>Class: </p><p id="characterClass"></p>');
 		characterClassContainer.insertAdjacentHTML('beforeend', '<div class="characterImageContainer"></div>');
 		let characterClass = document.querySelector("#characterClass");
 
-	/*name input - output kapcsolatok */	
+	/*ikonok és image-ek */
+		
+	
+	
+		/*name input - output kapcsolatok */	
 	document.getElementById("inputName").addEventListener("change", nameOutput);
 	function nameOutput() {
 		console.log(inputName.value);

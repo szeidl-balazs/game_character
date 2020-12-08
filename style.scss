@@ -33,17 +33,9 @@ h1, h3 {
 	
 }
 
-.formContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border: 1px solid black;
-}
-
 
 #inputName, #selectGender, #selectRace, #selectClass {
-	box-shadow: 3px 5px darkgrey;
+	box-shadow: 3px 5px rgb(112, 110, 110);
 	margin: 10px;
 	padding: 5px;
 	height: 30px;
@@ -60,7 +52,7 @@ h1, h3 {
 }
 
 #selectRace {
-	background-color: rgb(238, 200, 168);
+	background-color: rgb(236, 219, 204);
 }
 
 #selectClass {
@@ -75,6 +67,57 @@ h1, h3 {
 	color: pink;
 }
 
+.formAndSheetContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.characterSheetContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+	.formAndSheetContainer {
+		display: flex;
+		flex-direction: column;
+		
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	body {
+		font-size: 150%;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	body {
+		font-size: 350%;
+	}
+
+	#inputName, #selectGender, #selectRace, #selectClass {
+		font-size: 110%;
+		box-shadow: 3px 5px darkgrey;
+		margin: 10px;
+		padding: 5px;
+		height: 100px;
+		width: 500px;
+
+	}
+}
+
+
+/*
 .characterSheetContainer,  .characterNameContainer, .characterGenderContainer, .characterRaceContainer, .characterClassContainer, .characterImageContainer {
 	border: 1px solid black;
-}
+} */

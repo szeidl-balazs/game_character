@@ -31,26 +31,9 @@ h1, h3 {
   padding: 30px;
 }
 
-.formContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 1px solid black;
-}
-
 #inputName, #selectGender, #selectRace, #selectClass {
-  -webkit-box-shadow: 3px 5px darkgrey;
-          box-shadow: 3px 5px darkgrey;
+  -webkit-box-shadow: 3px 5px #706e6e;
+          box-shadow: 3px 5px #706e6e;
   margin: 10px;
   padding: 5px;
   height: 30px;
@@ -67,7 +50,7 @@ h1, h3 {
 }
 
 #selectRace {
-  background-color: #eec8a8;
+  background-color: #ecdbcc;
 }
 
 #selectClass {
@@ -82,7 +65,80 @@ h1, h3 {
   color: pink;
 }
 
-.characterSheetContainer, .characterNameContainer, .characterGenderContainer, .characterRaceContainer, .characterClassContainer, .characterImageContainer {
-  border: 1px solid black;
+.formAndSheetContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
+.characterSheetContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .formAndSheetContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 150%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    font-size: 350%;
+  }
+  #inputName, #selectGender, #selectRace, #selectClass {
+    font-size: 110%;
+    -webkit-box-shadow: 3px 5px darkgrey;
+            box-shadow: 3px 5px darkgrey;
+    margin: 10px;
+    padding: 5px;
+    height: 100px;
+    width: 500px;
+  }
+}
+
+/*
+.characterSheetContainer,  .characterNameContainer, .characterGenderContainer, .characterRaceContainer, .characterClassContainer, .characterImageContainer {
+	border: 1px solid black;
+} */
 /*# sourceMappingURL=style.css.map */
