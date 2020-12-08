@@ -25,7 +25,7 @@ body {
   height: 100vh;
 }
 
-h1 {
+h1, h3 {
   font-family: 'Rye', cursive;
   text-align: center;
   padding: 30px;
@@ -45,9 +45,10 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px solid black;
 }
 
-.inputName, .selectGender, .selectRace, .selectClass {
+#inputName, #selectGender, #selectRace, #selectClass {
   -webkit-box-shadow: 3px 5px darkgrey;
           box-shadow: 3px 5px darkgrey;
   margin: 10px;
@@ -57,20 +58,19 @@ h1 {
   border-radius: 10px;
 }
 
-.inputName {
+#inputName {
   background-color: #a5a5ac6c;
-  color: goldenrod;
 }
 
-.selectGender {
+#selectGender {
   background-color: #9b8d10;
 }
 
-.selectRace {
+#selectRace {
   background-color: #eec8a8;
 }
 
-.selectClass {
+#selectClass {
   background-color: olive;
 }
 
@@ -80,5 +80,9 @@ h1 {
 
 #female {
   color: pink;
+}
+
+.characterSheetContainer, .characterNameContainer, .characterGenderContainer, .characterRaceContainer, .characterClassContainer, .characterImageContainer {
+  border: 1px solid black;
 }
 /*# sourceMappingURL=style.css.map */
