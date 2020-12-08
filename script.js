@@ -4,6 +4,8 @@ function pageLoaded() {
 
 	let rootDiv = document.getElementById("root");
 
+	rootDiv.insertAdjacentHTML('afterbegin', '<h1>Create Your Character</h1>');
+
 	/*A formot befoglaló container létrehozása */
 	
 	rootDiv.insertAdjacentHTML('beforeend', '<div class="formContainer"></div');
@@ -59,7 +61,11 @@ function pageLoaded() {
 	selectClass.insertAdjacentHTML('beforeend', '<option id="druid">Druid</option>');
 	selectClass.insertAdjacentHTML('beforeend', '<option id="monk">Monk</option>');
 
-		
+		/*A character sheet-et befoglaló container létrehozása */
+	
+	formContainer.insertAdjacentHTML('beforeend', '<div class="characterSheetContainer"></div');
+	let characterSheetContainer = document.querySelector(".characterSheetContainer");
+
 		
 		
 };

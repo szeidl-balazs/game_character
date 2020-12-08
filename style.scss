@@ -1,11 +1,43 @@
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+ font-family: 'Rye', cursive;
+}
+
+#root {
+	background-image: linear-gradient(45deg, olive, #dbdfdbb9);
+	height: 100vh;
+}
+
+h1 {
+	font-family: 'Rye', cursive;
+	text-align: center;
+	padding: 30px;
+	
+}
+
 .formContainer {
-	border: 1px solid black;
-	background-color: #dbdfdbb9;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	height: 100vh;
+	align-items: center;	
 }
 
 
@@ -19,7 +51,7 @@
 }
 
 .inputName {
-	background-color: #63636b6c;
+	background-color: #a5a5ac6c;
 	color: goldenrod;
 }
 
@@ -28,7 +60,7 @@
 }
 
 .selectRace {
-	background-color: khaki;
+	background-color: rgb(238, 200, 168);
 }
 
 .selectClass {

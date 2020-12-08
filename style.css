@@ -1,6 +1,37 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rye', cursive;
+}
+
+#root {
+  background-image: linear-gradient(45deg, olive, #dbdfdbb9);
+  height: 100vh;
+}
+
+h1 {
+  font-family: 'Rye', cursive;
+  text-align: center;
+  padding: 30px;
+}
+
 .formContainer {
-  border: 1px solid black;
-  background-color: #dbdfdbb9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,7 +45,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
 }
 
 .inputName, .selectGender, .selectRace, .selectClass {
@@ -28,7 +58,7 @@
 }
 
 .inputName {
-  background-color: #63636b6c;
+  background-color: #a5a5ac6c;
   color: goldenrod;
 }
 
@@ -37,7 +67,7 @@
 }
 
 .selectRace {
-  background-color: khaki;
+  background-color: #eec8a8;
 }
 
 .selectClass {
