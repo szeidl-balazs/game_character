@@ -38,23 +38,24 @@ function pageLoaded() {
 		form.insertAdjacentHTML('beforeend', '<div class="formGenderContainer"></div>');
 		let formGenderContainer = document.querySelector(".formGenderContainer");
 		formGenderContainer.insertAdjacentHTML('afterbegin', '<select id="selectGender"></select>');
-		let selectGender = document.querySelector("#selectGender");
-		selectGender.insertAdjacentHTML('afterbegin', '<option id="male" value="" disabled selected hidden>Choose gender!</option>');
-		selectGender.insertAdjacentHTML('afterbegin', '<option id="male">male</option>');
-		selectGender.insertAdjacentHTML('beforeend', '<option id="female">female</option>');
-		selectGender.setAttribute("placeholder", "gender");
+		let selectGenderVar = document.querySelector("#selectGender");
+		selectGenderVar.insertAdjacentHTML('afterbegin', '<option id="blank_option" value="" disabled selected hidden>Choose gender!</option>');
+		selectGenderVar.insertAdjacentHTML('afterbegin', '<option id="male" class="optionClass">male</option>');
+		selectGenderVar.insertAdjacentHTML('beforeend', '<option id="female" class="optionClass">female</option>');
+		let option = document.querySelectorAll(".optionClass");
+		selectGenderVar.setAttribute("placeholder", "gender");
 
 	/*select race létrehozása option-ökkel */
 		form.insertAdjacentHTML('beforeend', '<div class="formRaceContainer"></div>');
 		let formRaceContainer = document.querySelector(".formRaceContainer");
 		formRaceContainer.insertAdjacentHTML('afterbegin', '<select id="selectRace"></select>');
-		let selectRace = document.querySelector("#selectRace");
-		selectRace.insertAdjacentHTML('afterbegin', '<option class="blankSelect" value="" disabled selected hidden>Select race!</option>');
-		selectRace.insertAdjacentHTML('beforeend', '<option id="aarakocra">Aarakocra</option>');
-		selectRace.insertAdjacentHTML('beforeend', '<option id="aasimar">Aasimar</option>');
-		selectRace.insertAdjacentHTML('beforeend', '<option id="centaur">Centaur</option>');
-		selectRace.insertAdjacentHTML('beforeend', '<option id="dragonborn">Dragonborn</option>');
-		selectRace.insertAdjacentHTML('beforeend', '<option id="dwarf">Dwarf</option>');
+		let selectRaceVar = document.querySelector("#selectRace");
+		selectRaceVar.insertAdjacentHTML('afterbegin', '<option class="blankSelect" value="" disabled selected hidden>Select race!</option>');
+		selectRaceVar.insertAdjacentHTML('beforeend', '<option id="aarakocra">Aarakocra</option>');
+		selectRaceVar.insertAdjacentHTML('beforeend', '<option id="aasimar">Aasimar</option>');
+		selectRaceVar.insertAdjacentHTML('beforeend', '<option id="centaur">Centaur</option>');
+		selectRaceVar.insertAdjacentHTML('beforeend', '<option id="dragonborn">Dragonborn</option>');
+		selectRaceVar.insertAdjacentHTML('beforeend', '<option id="dwarf">Dwarf</option>');
 
 	/*select class létrehozása option-ökkel */
 		form.insertAdjacentHTML('beforeend', '<div class="formClassContainer"></div>');
@@ -76,30 +77,30 @@ function pageLoaded() {
 		characterSheetContainer.insertAdjacentHTML('afterbegin', '<div class="characterNameContainer"></div>');
 		let characterNameContainer = document.querySelector(".characterNameContainer");
 		characterNameContainer.insertAdjacentHTML('beforebegin', '<h3 id="playerData">Player data</h3>');
-		characterNameContainer.insertAdjacentHTML('afterbegin', '<p>Name: </p><p id="characterName"></p>');
+		characterNameContainer.insertAdjacentHTML('afterbegin', '<p id="characterName"></p>');
 		let characterName = document.querySelector("#characterName");
 
 	/*character gender blokk létrehozása */
 		characterSheetContainer.insertAdjacentHTML('beforeend', '<div class="characterGenderContainer"></div>');
 		let characterGenderContainer = document.querySelector(".characterGenderContainer");
-		characterGenderContainer.insertAdjacentHTML('afterbegin', '<p>Gender: </p><p id="characterGender"></p>');
-		characterGenderContainer.insertAdjacentHTML('beforeend', '<div class="characterImageContainer"></div>');
+		characterGenderContainer.insertAdjacentHTML('afterbegin', '<p id="characterGender"></p>');
 		let characterGender = document.querySelector("#characterGender");
+		characterGenderContainer.insertAdjacentHTML('beforeend', '<div class="characterImageContainer"></div>');		
 		let characterImageContainer = document.querySelector(".characterImageContainer");
-		characterImageContainer.insertAdjacentHTML('afterbegin', '<img src="/img/iconmonstrgender8.svg" alt="maleIcon">');
-		characterImageContainer.insertAdjacentHTML('afterbegin', '<img src="/img/iconmonstrgender10.svg" alt="femaleIcon">');
+		
 
 	/*character race blokk létrehozása */
 		characterSheetContainer.insertAdjacentHTML('beforeend', '<div class="characterRaceContainer"></div>');
 		let characterRaceContainer = document.querySelector(".characterRaceContainer");
-		characterRaceContainer.insertAdjacentHTML('afterbegin', '<p>Race: </p><p id="characterRace"></p>');
-		characterRaceContainer.insertAdjacentHTML('beforeend', '<div class="characterImageContainer"></div>');
+		characterRaceContainer.insertAdjacentHTML('afterbegin', '<p id="characterRace"></p>');
 		let characterRace = document.querySelector("#characterRace");
+		characterRaceContainer.insertAdjacentHTML('beforeend', '<div class="characterImageContainer"></div>');
+		let charImgContVar = document.querySelector('.characterImageContainer');
 
 	/*character class blokk létrehozása */
 		characterSheetContainer.insertAdjacentHTML('beforeend', '<div class="characterClassContainer"></div>');
 		let characterClassContainer = document.querySelector(".characterClassContainer");
-		characterClassContainer.insertAdjacentHTML('afterbegin', '<p>Class: </p><p id="characterClass"></p>');
+		characterClassContainer.insertAdjacentHTML('afterbegin', '<p id="characterClass"></p>');
 		characterClassContainer.insertAdjacentHTML('beforeend', '<div class="characterImageContainer"></div>');
 		let characterClass = document.querySelector("#characterClass");
 
@@ -111,31 +112,70 @@ function pageLoaded() {
 	document.getElementById("inputName").addEventListener("change", nameOutput);
 	function nameOutput() {
 		console.log(inputName.value);
-		characterName.innerHTML = inputName.value;
-		
+		characterName.innerHTML = "Name: " + inputName.value;
 	}
 
 	/*gender input - output kapcsolatok */
 	document.getElementById("selectGender").addEventListener("change", selectOutput);
 	function selectOutput() {
-		console.log(selectGender.value);
-		characterGender.innerHTML = selectGender.value;
 		
+		if (selectGenderVar.value === "male") {
+			console.log("male");
+			characterGender.innerHTML = "Gender: " + selectGender.value + " " + '<img src="img/iconmonstrgender8.svg">';
+						
+		}
+
+		else if (selectGenderVar.value === "female") {
+			console.log("female");
+			characterGender.innerHTML = "Gender: " + selectGenderVar.value + " " + '<img src="img/iconmonstrgender10.svg">';
+		}
+		else {
+			console.log("no gender selected");
+		}		
 	}
 
 	/*race input - output kapcsolatok */
 
 	document.getElementById("selectRace").addEventListener("change", raceOutput);
 	function raceOutput() {
-		console.log(selectRace.value);
-		characterRace.innerHTML = selectRace.value;
+		console.log(selectRaceVar.value);
+		if (selectRaceVar.value === "Aarakocra") {
+			characterRace.innerHTML = "Race: " + selectRaceVar.value;
+			charImgContVar.innerHTML = '<img src="img/Aarakocra.png">';
+			
+		}
+		
+		else if(selectRaceVar.value === "Aasimar") {
+			characterRace.innerHTML = "Race: " + selectRaceVar.value;
+			charImgContVar.innerHTML = '<img src="img/Aasimar.png">';
+		}
+
+		else if(selectRaceVar.value === "Dragonborn") {
+			characterRace.innerHTML = "Race: " + selectRaceVar.value;
+			charImgContVar.innerHTML = '<img src="img/Dragonborn.png">';
+		}
+
+		else if(selectRaceVar.value === "Dwarf") {
+			characterRace.innerHTML = "Race: " + selectRaceVar.value;
+			charImgContVar.innerHTML = '<img src="img/Dwarf.png">';
+		}
+
+		else if(selectRaceVar.value === "Centaur") {
+			characterRace.innerHTML = "Race: " + selectRaceVar.value;
+			charImgContVar.innerHTML = '<img src="img/Centaur.png">';
+		}
+
+		else {
+			characterRace.innerHTML = "";
+		}
+
 	}
 
 	/*class input - output kapcsolatok */
 	document.getElementById("selectClass").addEventListener("change", classOutput);
 	function classOutput() {
 		console.log(selectClass.value);
-		characterClass.innerHTML = selectClass.value;
+		characterClass.innerHTML = "Class: " + selectClass.value;
 	}
 	
 };

@@ -104,6 +104,10 @@ h1, h3 {
           align-items: center;
 }
 
+.characterImageContainer img {
+  height: 200px;
+}
+
 @media only screen and (max-width: 768px) {
   .formAndSheetContainer {
     display: -webkit-box;
