@@ -18,11 +18,16 @@ html {
 }
 
 body {
- font-family: 'Rye', cursive;
- color: #d6d2d2;
- background: url("./img/background.jpg") center; /*linear-gradient(45deg, olive, #dbdfdbb9);*/
- background-size: cover;
+ 	font-family: 'Rye', cursive;
+ 	color: #d6d2d2;	 
+}
 
+.main-container {
+	background: url("./img/background.jpg") center; /*linear-gradient(45deg, olive, #dbdfdbb9);*/
+	background-size: cover;
+	background-repeat: no-repeat; 
+	min-height: 100vh;
+	width: 100vw;
 }
 
 
@@ -97,7 +102,7 @@ img {
 }
 
 .characterRaceContainer img {
-height: 100px;
+	height: 100px;
 }
 
 .characterRaceContainer {
@@ -161,6 +166,7 @@ height: 100px;
 		width: 500px;
 
 	}
+
 	.charRaceImgCont img, .charClassImgCont img {
 	height: 300px;
 	}
